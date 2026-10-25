@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jeremy Pham – Math and Coding Tutoring in Brampton</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📐</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <a class="brand" href="#top">Jeremy Pham</a>
+  <nav aria-label="Main"><a href="#subjects">Subjects</a><a href="#how">How it works</a><a href="#about">About</a><a href="#portfolio">Portfolio</a><a class="keep" href="#contact">Contact</a></nav>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div>
+    <h1>Math and coding that finally <span>makes sense</span>.</h1>
+    <p class="lead">One-on-one tutoring in math up to grade 11 and in programming, from first lines of code to university-level coursework. Patient explanations, worked examples, and practice that fits your pace.</p>
+    <a class="btn" href="#contact">Book a first session</a><a class="btn alt" href="#subjects">See what I teach</a>
+  </div>
+  <div class="pair" aria-label="Example: the same problem solved in math and in Python">
+    <div class="math"><small>Math: solve for x</small>2x + 6 = 14<br>2x = 8<br>x = 4</div>
+<pre>x = (14 - 6) / 2
+print(x)   # 4.0</pre>
+  </div>
+</div>
+</main>
+
+<section id="subjects">
+  <h2>What I teach</h2>
+  <p class="sub">Two subjects, one approach: understand the idea first, then practise until it sticks.</p>
+  <div class="two">
+    <div class="panel">
+      <h3>Math, up to grade 11</h3>
+      <ul>
+        <li>Fractions, ratios, and percentages</li>
+        <li>Algebra and equations</li>
+        <li>Functions and graphing</li>
+        <li>Geometry and trigonometry</li>
+        <li>Test and exam preparation</li>
+      </ul>
+      <p>Ideal for catching up, keeping ahead, or building confidence before a test.</p>
+    </div>
+    <div class="panel">
+      <h3>Coding</h3>
+      <ul>
+        <li>Python, Java, C#, and C++</li>
+        <li>JavaScript (React), HTML, and CSS</li>
+        <li>Assignment help and debugging</li>
+        <li>Intro computer science concepts</li>
+        <li>Scratch for younger beginners</li>
+      </ul>
+      <p>From a first “Hello, world” to personal projects and school or university coursework.</p>
+    </div>
+  </div>
+</section>
+
+<section id="how" class="band" style="background:var(--ink)">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <p class="sub">Simple to start, easy to adjust as you go.</p>
+    <ol class="steps">
+      <li><h3>Send a message</h3><p>Tell me the subject, grade or level, and what you’d like help with.</p></li>
+      <li><h3>First session</h3><p>We look at where you are now and agree on goals for the next few weeks.</p></li>
+      <li><h3>Keep going</h3><p>Regular sessions with clear explanations, practice problems, and feedback.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="about">
+  <div class="about">
+    <div>
+      <h2>About me</h2>
+      <p>I’m a Computer Science graduate of Trent University and a software developer who builds and deploys cloud applications. Explaining technical ideas in plain language is part of my daily work, and I bring that to every session.</p>
+      <p>I’ve been teaching programming since 2019, when I led introductory Scratch sessions for children with the City of Brampton and designed games to teach core concepts. I’m from Brampton, I finished high school here with honours, and I know how much pressure school can bring.</p>
+    </div>
+    <aside class="facts">
+      <h3>At a glance</h3>
+      <dl>
+        <dt>Education</dt><dd>B.Sc. Computer Science, Trent University</dd>
+        <dt>Experience</dt><dd>Software developer working with Python, JavaScript, and AWS</dd>
+        <dt>Community</dt><dd>Taught coding to children as a City of Brampton volunteer</dd>
+        <dt>Based in</dt><dd>Brampton, Ontario</dd>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<section id="portfolio">
+  <h2>My portfolio</h2>
+  <p class="sub">See my work, experience, and technical skills.</p>
+  <a class="pcard" href="https://jeremypham2003.github.io/jeremy-pham-portfolio/" target="_blank" rel="noopener">
+    <h3>Jeremy Pham: Software Developer</h3>
+    <p>Cloud and infrastructure projects on AWS, a Google Play app release, and the languages I work in.</p>
+    <span class="btn">Visit my portfolio →</span>
+  </a>
+</section>
+
+<section id="contact">
+  <h2>Book a session</h2>
+  <p class="sub">Send a message and I’ll reply with available times and rates.</p>
+  <div class="contact-row">
+    <a href="mailto:jeremyphamkw0705@gmail.com">jeremyphamkw0705@gmail.com</a>
+    <a href="tel:+16478784600">647-878-4600</a>
+  </div>
+  <form id="f">
+    <label>Your name<input id="n" required autocomplete="name"></label>
+    <label>Subject
+      <select id="s"><option>Math</option><option>Coding</option><option>Math and coding</option></select>
+    </label>
+    <label>Grade or level<input id="g" placeholder="For example: Grade 10, or first-year university"></label>
+    <label>What do you need help with?<textarea id="m" required></textarea></label>
+    <button class="btn" type="submit">Send by email</button>
+    <small id="note" role="status"></small>
+  </form>
+</section>
+</div>
+<footer><div class="wrap">© 2026 Jeremy Pham · Tutoring in Brampton, Ontario · <a href="https://github.com/JeremyPham2003/jeremy-pham-portfolio" target="_blank" rel="noopener">GitHub</a> · <a href="https://www.linkedin.com/in/jeremy-pham-56747b228" target="_blank" rel="noopener">LinkedIn</a></div></footer>
+
+<script>
+document.getElementById('f').addEventListener('submit',function(e){
+  e.preventDefault();
+  var v=function(id){return document.getElementById(id).value.trim()};
+  var body='Name: '+v('n')+'\nSubject: '+v('s')+'\nGrade or level: '+v('g')+'\n\n'+v('m');
+  location.href='mailto:jeremyphamkw0705@gmail.com?subject='+encodeURIComponent('Tutoring inquiry from '+v('n'))+'&body='+encodeURIComponent(body);
+  document.getElementById('note').textContent='Your email app should open with the message ready to send.';
+});
+</script>
+</body>
+</html>
