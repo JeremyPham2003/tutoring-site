@@ -141,13 +141,15 @@ print(x)   # 4.0</pre>
     <a href="tel:+16478784600">647-878-4600</a>
   </div>
   <form id="f">
+    <input type="checkbox" id="bc" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
     <label>Your name<input id="n" required autocomplete="name"></label>
+    <label>Your email<input id="e" type="email" required autocomplete="email"></label>
     <label>Subject
       <select id="s"><option>Math</option><option>Coding</option><option>Math and coding</option></select>
     </label>
     <label>Grade or level<input id="g" placeholder="For example: Grade 10, or first-year university"></label>
     <label>What do you need help with?<textarea id="m" required></textarea></label>
-    <button class="btn" type="submit">Send by email</button>
+    <button class="btn" type="submit">Send message</button>
     <small id="note" role="status"></small>
   </form>
 </section>
@@ -155,12 +157,22 @@ print(x)   # 4.0</pre>
 <footer><div class="wrap">© 2026 Jeremy Pham · Tutoring in Brampton, Ontario · <a href="https://github.com/JeremyPham2003/jeremy-pham-portfolio" target="_blank" rel="noopener">GitHub</a> · <a href="https://www.linkedin.com/in/jeremy-pham-56747b228" target="_blank" rel="noopener">LinkedIn</a></div></footer>
 
 <script>
-document.getElementById('f').addEventListener('submit',function(e){
-  e.preventDefault();
+var ACCESS_KEY='36d3a784-1194-4fc6-8704-acee6f6d6841';
+document.getElementById('f').addEventListener('submit',function(ev){
+  ev.preventDefault();
+  var note=document.getElementById('note'),btn=ev.target.querySelector('button');
   var v=function(id){return document.getElementById(id).value.trim()};
-  var body='Name: '+v('n')+'\nSubject: '+v('s')+'\nGrade or level: '+v('g')+'\n\n'+v('m');
-  location.href='mailto:jeremyphamkw0705@gmail.com?subject='+encodeURIComponent('Tutoring inquiry from '+v('n'))+'&body='+encodeURIComponent(body);
-  document.getElementById('note').textContent='Your email app should open with the message ready to send.';
+  if(document.getElementById('bc').checked){return}
+  if(ACCESS_KEY.indexOf('PASTE')===0){note.textContent='The form is not connected yet. Please email me directly.';return}
+  btn.disabled=true;note.textContent='Sending\u2026';
+  fetch('https://api.web3forms.com/submit',{
+    method:'POST',
+    headers:{'Content-Type':'application/json',Accept:'application/json'},
+    body:JSON.stringify({access_key:ACCESS_KEY,subject:'New tutoring inquiry from '+v('n'),from_name:'Tutoring website',name:v('n'),email:v('e'),course:v('s'),level:v('g'),message:v('m')})
+  }).then(function(r){return r.json()}).then(function(d){
+    if(d.success){ev.target.reset();note.textContent='Thanks! Your message was sent and I will reply soon.'}
+    else{note.textContent='Something went wrong. Please email me directly.'}
+  }).catch(function(){note.textContent='Could not send. Please email me directly.'}).then(function(){btn.disabled=false});
 });
 </script>
 </body>
